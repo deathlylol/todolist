@@ -3,6 +3,8 @@
 use App\Http\Controllers\auth\AuthController;
 use App\Http\Controllers\task\TaskController;
 use Illuminate\Support\Facades\Route;
+use Rakutentech\LaravelRequestDocs\Controllers\LaravelRequestDocsController;
+
 /*
 |--------------------------------------------------------------------------
 | API Routes
@@ -34,3 +36,5 @@ Route::middleware('auth:sanctum')
             Route::get('search', [TaskController::class, 'search']);
         });
     });
+
+Route::get('docs', [LaravelRequestDocsController::class, 'index']);
